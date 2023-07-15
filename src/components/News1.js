@@ -383,7 +383,7 @@ const News=(props)=> {
     // if(!(this.state.page+1>Math.ceil(this.state.totalResults/this.props.pageSize))){
       //this.progress=0
       props.setProgress(0);
-      const url=`https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`
+      const url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pageSize=${props.pageSize}`
      // const url="https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=3023c9415d3149b29d2897709d4d4515"
      props.setProgress(30); 
      setLoading(true)
@@ -462,7 +462,7 @@ const News=(props)=> {
     
     //this.update()
    
-      const url=`https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&apiKey=${props.apikey}&page=${page+1}&pageSize=${props.pageSize}`
+      const url=`https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page+1}&pageSize=${props.pageSize}`
       //const url="https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=d093053d72bc40248998159804e0e67d"
       //this.setState({loading:true})
       setPage(page+1) 

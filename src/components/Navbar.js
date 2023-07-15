@@ -55,14 +55,16 @@
 import React, { Component,useEffect } from 'react'
 import PropTypes from 'prop-types'
 import {Outlet, Link, useLocation  } from "react-router-dom";
-const Navbar=()=> {
+const Navbar=(props)=> {
   let location = useLocation();
   useEffect(() => {
       console.log(location.pathname);
     }, [location]);
+  
   return (
     <div>
-        <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <nav className="navbar fixed-top navbar-expand-lg navbar-dark " style={{backgroundColor:"#042743"}} >
+          
           <div className="container-fluid">
             <Link className="navbar-brand" to="">UN</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,14 +101,14 @@ const Navbar=()=> {
                   Country
                   </a>
                     <ul className="dropdown-menu">
-                      <li><a className="dropdown-item" href="#">India in</a></li>
-                      <li><a className="dropdown-item" href="#">Russia ru</a></li>
-                      <li><a className="dropdown-item" href="#">USA us</a></li>
-                      <li><a className="dropdown-item" href="#">France</a></li>
-                      <li><a className="dropdown-item" href="#">USA</a></li>
-                      <li><a className="dropdown-item" href="#">USA</a></li>
-                      {/* <li><hr className="dropdown-divider"/></li> */}
-                      <li><a className="dropdown-item" href="#">Something else here</a></li>
+                      <li><a className="dropdown-item" onClick={props.handleinClick}>India in</a></li>
+                      {/* <li><a className="dropdown-item" onClick={props.handleruClick}>Russia ru</a></li> */}
+                      {/* <li><a className="dropdown-item" onClick={handleusClick}>USA us</a></li>
+                      <li><a className="dropdown-item" onClick={handlechClick}>China ch</a></li>
+                      <li><a className="dropdown-item" onClick={handlegbClick}>UK gb</a></li>
+                      <li><a className="dropdown-item" onClick={handledeClick}>Germany de</a></li>
+                      <li><a className="dropdown-item" onClick={handlefrClick}>France fr</a></li>
+                      <li><a className="dropdown-item" onClick={handleauClick}>Australia au</a></li> */}
                     </ul>
                 </li>
               </ul>

@@ -73,7 +73,7 @@ export class News extends Component {
   async update(pageno){
     //if(!(this.state.page+1>Math.ceil(this.state.totalResults/this.props.pageSize))){
       //let url=`https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=c3ea7e2d557844e5b17021d9314b46bd&page=${this.state.page}&pageSize=${this.props.pageSize}`
-      const url=`https://newsapi.org/v2/top-headlines?country=in&category=${this.props.category}&apiKey=3023c9415d3149b29d2897709d4d4515&page=${this.state.page}&pageSize=${this.props.pageSize}`
+      const url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=3023c9415d3149b29d2897709d4d4515&page=${this.state.page}&pageSize=${this.props.pageSize}`
 
       this.setState({loading:true})
       let data=await fetch(url);
