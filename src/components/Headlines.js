@@ -80,7 +80,7 @@ const Newsitem=(props)=> {
                 <p className="card-text">{description}...</p>
                 {/* <p className="card-text" ><small className="text-body-secondary" style={{color:"red"}}>published by{author} at {publishedat}</small></p>//in next line we are removing a class that is for setting a color */}
                 <p className="card-text" ><small  style={{color:"brown"}}>published by {author?author:"unknown"} at {Date(publishedat)}</small></p>
-                <a href={url} target="_blank" className="btn btn-primary">Go somewhere</a>
+                <a href={url} target="_blank" className="btn btn-primary">Open</a>
                 {/* target="_blank"//to open in a new tab */}
               </div>
             </div>
