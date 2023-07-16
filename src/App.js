@@ -74,6 +74,7 @@ import React, { Component,useState}  from 'react'
 import Navbar from './components/Navbar.js'
 // import News from './components/News'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReactDOM from "react-dom/client";
 //import App from './components/News1'
 import News from './components/News1.js'
 import LoadingBar from 'react-top-loading-bar'
@@ -82,7 +83,7 @@ const App=()=> {
   const pageSize = 5;
   //const apiKey = process.env.REACT_APP_NEWS_API
   const [progress, setProgress] = useState(0)
-  const [country,setCountry]=useState("in");
+  const [dcountry,setCountry]=useState("in");
   // pageSize=20;
   //apikey = process.env.local.apikey
  const apikey=process.env.REACT_APP_NEWS_API
@@ -114,24 +115,48 @@ const App=()=> {
       setCountry("ru");
       console.log("russia")
     }    
+    const handleusClick=()=>{
+      setCountry("us");
+      console.log("usa")
+    }  
+    const handleauClick=()=>{
+      setCountry("au");
+      console.log("australia")
+    }  
+    const handlefrClick=()=>{
+      setCountry("fr");
+      console.log("france")
+    }  
+    const handledeClick=()=>{
+      setCountry("de");
+      console.log("germany")
+    }  
+    const handlechClick=()=>{
+      setCountry("ch");
+      console.log("china")
+    }  
+    const handlegbClick=()=>{
+      setCountry("gb");
+      console.log("Britain")
+    }  
     return (
       <div style={{backgroundColor:"grey"}}>
         <BrowserRouter>
-        <Navbar country={country} handleinClick={handleinClick} handleruClick={handleruClick}/>
+        <Navbar country={dcountry} handleinClick={handleinClick} handleruClick={handleruClick} handleusClick={handleusClick} handleauClick={handleauClick} handledeClick={handledeClick} handlegbClick={handlegbClick} handlechClick={handlechClick} handlefrClick={handlefrClick}/>
         <LoadingBar
         color='#f11946'
         progress={progress}
         // onLoaderFinished={() => setProgress(0)}
         />
           <Routes>
-            <Route path="/" element={<News setProgress={setProgress} apikey={apikey}  key="general"  pageSize={20} category={"general"} country={country}/>} />
-            <Route path="/business" element={<News setProgress={setProgress} apikey={apikey}  key="business"  pageSize={20} category={"business"} country={country}/>} />
-            <Route path="/entertainment" element={<News setProgress={setProgress} apikey={apikey}  key="entertainment"  pageSize={20} category={"entertainment"} country={country}/>} />
-            <Route path="/general" element={<News setProgress={setProgress} apikey={apikey}  key="general" pageSize={20} category={"general"} country={country}/>} />
-            <Route path="/health" element={<News setProgress={setProgress} apikey={apikey}  key="health"  pageSize={20} category={"health"} country={country} />} />
-            <Route path="/science" element={<News setProgress={setProgress} apikey={apikey}  key="science" pageSize={20} category={"science"} country={country}/>} />
-            <Route path="/sports" element={<News setProgress={setProgress} apikey={apikey}  key="sports" pageSize={20} category={"sports"} country={country}/>} />
-            <Route path="/technology" element={<News setProgress={setProgress} apikey={apikey}  key="technology"  pageSize={20} category={"technology"} country={country}/>} />
+            <Route path="/" element={<News setProgress={setProgress} apikey={apikey}  key="general"  pageSize={20} category={"general"} country={dcountry}/>} />
+            <Route path="/business" element={<News setProgress={setProgress} apikey={apikey}  key="business"  pageSize={20} category={"business"} country={dcountry}/>} />
+            <Route path="/entertainment" element={<News setProgress={setProgress} apikey={apikey}  key="entertainment"  pageSize={20} category={"entertainment"} country={dcountry}/>} />
+            <Route path="/general" element={<News setProgress={setProgress} apikey={apikey}  key="general" pageSize={20} category={"general"} country={dcountry}/>} />
+            <Route path="/health" element={<News setProgress={setProgress} apikey={apikey}  key="health"  pageSize={20} category={"health"} country={dcountry} />} />
+            <Route path="/science" element={<News setProgress={setProgress} apikey={apikey}  key="science" pageSize={20} category={"science"} country={dcountry}/>} />
+            <Route path="/sports" element={<News setProgress={setProgress} apikey={apikey}  key="sports" pageSize={20} category={"sports"} country={dcountry}/>} />
+            <Route path="/technology" element={<News setProgress={setProgress} apikey={apikey}  key="technology"  pageSize={20} category={"technology"} country={dcountry}/>} />
           </Routes>
         </BrowserRouter>
         

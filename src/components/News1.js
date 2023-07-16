@@ -480,7 +480,7 @@ const News=(props)=> {
      
       <div  >
          {/* console.log("render") not executed*/}
-        
+         console.log("start");
          <h2   style={{textAlign:"center" ,marginTop: '90px'}}>Top {capitalizeFirstLetter(props.category)} Headlines</h2>
          {loading && <Spinner/>}
          <InfiniteScroll
@@ -503,6 +503,7 @@ const News=(props)=> {
           </div>
        
         </InfiniteScroll>
+        console.log("end")
       </div>
       
     )
