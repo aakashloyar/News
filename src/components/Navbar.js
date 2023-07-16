@@ -98,7 +98,7 @@ const Navbar=(props)=> {
                 </li>
                 <li className="nav-item dropdown mx-5">
                   <a className="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Country
+                  Country-{props.country}
                   </a>
                     <ul className="dropdown-menu">
                       <li><Link className="dropdown-item" to={`${location.pathname==="/"? "business": "/"}`} onClick={props.handleinClick}>India</Link></li>
